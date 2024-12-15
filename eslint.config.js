@@ -23,35 +23,35 @@ export default [
       },
     },
     rules: {
-      'prettier/prettier': 'error',
-      'react/jsx-no-target-blank': 'off',
-      'react/prop-types': 'off',
+      'eslintPluginPrettier/prettier': 'error',
+      'pluginReact/jsx-no-target-blank': 'off',
+      'pluginReact/prop-types': 'off',
 
-      'react-refresh/only-export-components': [
-        'warn',
-        {
-          allowConstantExport: true,
-        },
-      ],
+      // 'react-refresh/only-export-components': [
+      //   'warn',
+      //   {
+      //     allowConstantExport: true,
+      //   },
+      // ],
 
-      'react-hooks/rules-of-hooks': 'error',
-      'react-hooks/exhaustive-deps': 'warn',
-      'react/react-in-jsx-scope': 'off',
+      'eslintPluginReactHooks/rules-of-hooks': 'error',
+      'eslintPluginReactHooks/exhaustive-deps': 'warn',
+      'pluginReact/react-in-jsx-scope': 'off',
       'no-console': 'warn',
       'no-debugger': 'error',
       'consistent-return': 'warn',
-      'react/jsx-no-bind': 'off',
-      'import/no-commonjs': 'error',
+      'pluginReact/jsx-no-bind': 'off',
+      // 'import/no-commonjs': 'error',
       'no-var': 'error',
       'prefer-const': 'error',
       'no-unused-vars': 'warn',
 
-      'import/no-extraneous-dependencies': [
-        'error',
-        {
-          devDependencies: ['vite.config.js'],
-        },
-      ],
+      // 'import/no-extraneous-dependencies': [
+      //   'error',
+      //   {
+      //     devDependencies: ['vite.config.js'],
+      //   },
+      // ],
     },
   },
 ];
