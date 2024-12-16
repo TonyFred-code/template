@@ -1,8 +1,13 @@
 // CustomButton.jsx
 import propTypes from 'prop-types';
+import { btn } from './CustomButton.module.css';
 
 const CustomButton = ({ onClick }) => {
-  return <button onClick={onClick}>Click me</button>;
+  return (
+    <button onClick={onClick} className={btn}>
+      Click me
+    </button>
+  );
 };
 
 CustomButton.propTypes = {
