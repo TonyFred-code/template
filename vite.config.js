@@ -15,6 +15,9 @@ export default defineConfig({
     alias: {
       '@': path.resolve(__dirname, './src'),
       '@components': path.resolve(__dirname, './src/components'),
+      '@pages': path.resolve(__dirname, './src/pages'),
+      '@helpers': path.resolve(__dirname, './src/helpers'),
+      '@assets': path.resolve(__dirname, './src/assets'),
     },
   },
   server: {
