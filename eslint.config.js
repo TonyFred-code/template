@@ -33,7 +33,6 @@ export default [
     rules: {
       'eslintPluginPrettier/prettier': 'error',
       'react/jsx-no-target-blank': 'off',
-      'react/prop-types': 'off',
 
       // 'react-refresh/only-export-components': [
       //   'warn',
