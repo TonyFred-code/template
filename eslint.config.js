@@ -1,31 +1,39 @@
 import globals from 'globals';
 import pluginJs from '@eslint/js';
-import pluginReact from 'eslint-plugin-react';
+import react from 'eslint-plugin-react';
 import eslintPluginReactHooks from 'eslint-plugin-react-hooks'; // no type declaration from pkg developer
 import eslintPluginPrettier from 'eslint-plugin-prettier';
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
+  pluginJs.configs.recommended,
+  react.configs.flat.recommended,
+  react.configs.flat['jsx-runtime'],
   {
     files: ['**/*.{js,mjs,cjs,jsx}'],
     plugins: {
-      pluginJs,
-      pluginReact,
       eslintPluginReactHooks,
       eslintPluginPrettier,
     },
     languageOptions: {
-      globals: globals.browser,
+      globals: {
+        ...globals.browser,
+      },
       parserOptions: {
         ecmaFeatures: {
           jsx: true,
         },
       },
     },
+    settings: {
+      react: {
+        version: 'detect',
+      },
+    },
     rules: {
       'eslintPluginPrettier/prettier': 'error',
-      'pluginReact/jsx-no-target-blank': 'off',
-      'pluginReact/prop-types': 'off',
+      'react/jsx-no-target-blank': 'off',
+      'react/prop-types': 'off',
 
       // 'react-refresh/only-export-components': [
       //   'warn',
@@ -36,11 +44,11 @@ export default [
 
       'eslintPluginReactHooks/rules-of-hooks': 'error',
       'eslintPluginReactHooks/exhaustive-deps': 'warn',
-      'pluginReact/react-in-jsx-scope': 'off',
+      'react/react-in-jsx-scope': 'off',
       'no-console': 'warn',
       'no-debugger': 'error',
       'consistent-return': 'warn',
-      'pluginReact/jsx-no-bind': 'off',
+      'react/jsx-no-bind': 'off',
       // 'import/no-commonjs': 'error',
       'no-var': 'error',
       'prefer-const': 'error',
