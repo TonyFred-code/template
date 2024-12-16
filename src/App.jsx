@@ -4,6 +4,7 @@
 // import './App.css';
 
 import { Link } from 'react-router-dom';
+import CustomButton from './components/CustomButton/CustomButton';
 
 // function App() {
 //   const [count, setCount] = useState(0);
@@ -46,6 +47,13 @@ function App() {
           </li>
         </ul>
       </nav>
+      <p>
+        <CustomButton
+          onClick={() => {
+            alert('you clicked a module btn');
+          }}
+        />
+      </p>
     </div>
   );
 }
