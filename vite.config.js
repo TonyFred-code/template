@@ -13,14 +13,15 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './src'),
-      '@components': path.resolve(__dirname, './src/components'),
-      '@pages': path.resolve(__dirname, './src/pages'),
-      '@helpers': path.resolve(__dirname, './src/helpers'),
-      '@assets': path.resolve(__dirname, './src/assets'),
-      '@styles': path.resolve(__dirname, './src/styles'),
+      '@': path.resolve(__dirname, './src'), // For imports like '@/components/...'
+      '@components': path.resolve(__dirname, './src/components'), // For imports like '@components/...'
+      '@pages': path.resolve(__dirname, './src/pages'), // For imports like '@pages/...'
+      '@helpers': path.resolve(__dirname, './src/helpers'), // For utility functions
+      '@assets': path.resolve(__dirname, './src/assets'), // For static files
+      '@styles': path.resolve(__dirname, './src/styles'), // For CSS/SCSS files
     },
   },
+
   server: {
     port: 3000, // Dev server port
   },
