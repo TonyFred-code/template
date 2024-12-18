@@ -50,7 +50,7 @@ function App() {
       <p>
         <CustomButton
           onClick={() => {
-            alert('you clicked a module btn');
+            alert('you clicked a styled comp btn');
           }}
         />
       </p>

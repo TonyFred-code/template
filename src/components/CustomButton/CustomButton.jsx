@@ -1,13 +1,18 @@
 // CustomButton.jsx
 import propTypes from 'prop-types';
-import { btn } from './CustomButton.module.css';
+import styled from 'styled-components';
+// import { btn } from './CustomButton.module.css';
+
+const Wrapper = styled.button`
+  width: 90px;
+  height: 40px;
+  padding: 10px 20px;
+  border-radius: 4px;
+  border: none;
+`;
 
 const CustomButton = ({ onClick }) => {
-  return (
-    <button onClick={onClick} className={btn}>
-      Click me
-    </button>
-  );
+  return <Wrapper onClick={onClick}>Click me</Wrapper>;
 };
 
 CustomButton.propTypes = {
