@@ -1,7 +1,8 @@
 // CustomButton.jsx
 import propTypes from 'prop-types';
 import styled from 'styled-components';
-// import { btn } from './CustomButton.module.css';
+import baseStyles from '@styles/base.module.css';
+import classnames from 'classnames';
 
 const Wrapper = styled.button`
   width: 90px;
@@ -12,7 +13,18 @@ const Wrapper = styled.button`
 `;
 
 const CustomButton = ({ onClick }) => {
-  return <Wrapper onClick={onClick}>Click me</Wrapper>;
+  return (
+    <Wrapper
+      onClick={onClick}
+      className={classnames(
+        baseStyles.btn,
+        baseStyles.uAlignCenter,
+        baseStyles.uFlex
+      )}
+    >
+      Click me
+    </Wrapper>
+  );
 };
 
 CustomButton.propTypes = {
