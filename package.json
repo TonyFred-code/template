@@ -20,7 +20,7 @@
     "test": "vitest",
     "test:ui": "vitest --ui",
     "coverage": "vitest run --coverage",
-    "prepare": "is-ci || husky"
+    "prepare": "is-ci || husky install"
   },
   "dependencies": {
     "@mdi/js": "^7.4.47",
