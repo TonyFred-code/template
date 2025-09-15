@@ -21,10 +21,18 @@ export default [
       globals: {
         ...globals.browser,
       },
+      globals: {
+        ...globals.browser,
+      },
       parserOptions: {
         ecmaFeatures: {
           jsx: true,
         },
+      },
+    },
+    settings: {
+      react: {
+        version: 'detect',
       },
     },
     settings: {
