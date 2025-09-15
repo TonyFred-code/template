@@ -20,7 +20,7 @@
     "test": "vitest",
     "test:ui": "vitest --ui",
     "coverage": "vitest run --coverage",
-    "prepare": "husky"
+    "prepare": "is-ci || husky"
   },
   "dependencies": {
     "@mdi/js": "^7.4.47",
@@ -55,6 +55,7 @@
     "eslint-plugin-react-hooks": "^5.1.0",
     "eslint-plugin-react-refresh": "^0.4.16",
     "globals": "^15.13.0",
+    "is-ci": "^4.1.0",
     "jsdom": "^25.0.1",
     "prettier": "^3.4.2",
     "vite": "^6.0.3",
