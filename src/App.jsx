@@ -1,32 +1,18 @@
-import { Link } from 'react-router-dom';
-import CustomButton from './components/CustomButton/CustomButton';
-import baseStyles from './styles/base.module.css';
-import classNames from 'classnames';
+import { useState } from 'react';
 
-function App() {
+export default function App() {
+  const [heading, setHeading] = useState('Magnificent Monkeys');
+
+  function clickHandler() {
+    setHeading('Radical Rhinos');
+  }
+
   return (
-    <div>
-      <h1>Hello from the main page of the app!</h1>
-      <p className={classNames(baseStyles.uFlex)}>
-        Here are some examples of links to other pages
-      </p>
-      <nav>
-        <ul>
-          <li>
-            <Link to="profile">Profile page</Link>
-          </li>
-        </ul>
-      </nav>
-      <p>
-        <CustomButton
-          className={baseStyles.btn}
-          onClick={() => {
-            alert('you clicked a styled comp btn');
-          }}
-        />
-      </p>
-    </div>
+    <>
+      <button type="button" onClick={clickHandler}>
+        Click Me
+      </button>
+      <h1>{heading}</h1>
+    </>
   );
 }
-
-export default App;

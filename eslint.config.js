@@ -3,6 +3,7 @@ import pluginJs from '@eslint/js';
 import react from 'eslint-plugin-react';
 import eslintPluginReactHooks from 'eslint-plugin-react-hooks'; // no type declaration from pkg developer
 import eslintPluginPrettier from 'eslint-plugin-prettier';
+import eslintPluginImport from 'eslint-plugin-import';
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
@@ -14,8 +15,12 @@ export default [
     plugins: {
       eslintPluginReactHooks,
       eslintPluginPrettier,
+      eslintPluginImport,
     },
     languageOptions: {
+      globals: {
+        ...globals.browser,
+      },
       globals: {
         ...globals.browser,
       },
@@ -30,17 +35,14 @@ export default [
         version: 'detect',
       },
     },
+    settings: {
+      react: {
+        version: 'detect',
+      },
+    },
     rules: {
       'eslintPluginPrettier/prettier': 'error',
       'react/jsx-no-target-blank': 'off',
-
-      // 'react-refresh/only-export-components': [
-      //   'warn',
-      //   {
-      //     allowConstantExport: true,
-      //   },
-      // ],
-
       'eslintPluginReactHooks/rules-of-hooks': 'error',
       'eslintPluginReactHooks/exhaustive-deps': 'warn',
       'react/react-in-jsx-scope': 'off',
@@ -48,17 +50,23 @@ export default [
       'no-debugger': 'error',
       'consistent-return': 'warn',
       'react/jsx-no-bind': 'off',
-      // 'import/no-commonjs': 'error',
       'no-var': 'error',
       'prefer-const': 'error',
       'no-unused-vars': 'warn',
-
-      // 'import/no-extraneous-dependencies': [
-      //   'error',
-      //   {
-      //     devDependencies: ['vite.config.js'],
-      //   },
-      // ],
+      'eslintPluginImport/extensions': [
+        'error',
+        'always',
+        {
+          ignorePackages: true,
+        },
+      ],
+      'eslintPluginImport/prefer-default-export': 'off',
+      'eslintPluginImport/no-unresolved': [
+        'error',
+        {
+          ignore: ['^@/'],
+        },
+      ],
     },
   },
 ];
