@@ -19,7 +19,8 @@
     "lint:fix": "eslint --fix",
     "test": "vitest",
     "test:ui": "vitest --ui",
-    "coverage": "vitest run --coverage"
+    "coverage": "vitest run --coverage",
+    "prepare": "husky"
   },
   "dependencies": {
     "@mdi/js": "^7.4.47",
